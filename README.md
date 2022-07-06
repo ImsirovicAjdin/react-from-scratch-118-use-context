@@ -37,9 +37,17 @@ Now I can pass down the state to any component I want. The problem with this is,
 
 Another issue here is that I'll have to prop drill, which basically means that I have to pass down props from component to component to component.
 
-#### (2) Add errorMsg to state
+#### (2) Example of prop drilling
 
-asdf
+Once I've lifted the state up to App, now if I wanted to pass state all the way to the movie, I'd have to take the movies, and pass it down to the movie list via props.
+
+Then the MovieList would accept it, and then pass it down again to Movie, and render it in Movie.
+
+So we would have to keep passing the props over and over and over again, until it arrives to the specific component we want.
+
+
+
+
 
 #### (3) Move the data to a separate file and import it into App.js"
 
