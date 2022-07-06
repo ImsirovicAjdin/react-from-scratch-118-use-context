@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# About this React app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+This project is [deployed on Netlify]().
 
-In the project directory, you can run:
+## Learning Concepts covered
 
-### `npm start`
+Learning objectives:
+* how to deal with rendering errors?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### (0) Set up the README and the starter code
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Set up the shell of the README and the starter code that allows us to follow along with the commits.
 
-### `npm test`
+#### (1) The problems I'm faced with
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Let's say I'm building a movie app.
 
-### `npm run build`
+I wanna display all the movies, etc.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Finally, this is where we are facing our issues.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In App.js, I'm rendering the nav and the movie list, ok.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+These two should be separate, they have nothing to do with each other. But in this case, I do want to render the number of items I have in the movie list in the nav, and I cannot do that, because the only way you can do that is by passing it down through props.
 
-### `npm run eject`
+So app can pass down its state to Nav and MovieList, but in this case, we only have state in MovieList, so the only way that I can pass this  state down to another component is by props.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+So the only way to get this to work is to render the Nav component inside the MovieList component. But I don't want to render the Nav here, it makes no sense for it to be its child.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+So, how can we fix this?
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Well, 1 way is "lifting up the state". I take all the state from MovieList and move it up to the parent component (App.js).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Now I can pass down the state to any component I want. The problem with this is, I'm gonna have a lot of state in the app component, that doesn't belong to the app component.
 
-## Learn More
+Another issue here is that I'll have to prop drill, which basically means that I have to pass down props from component to component to component.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### (2) Add errorMsg to state
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+asdf
 
-### Code Splitting
+#### (3) Move the data to a separate file and import it into App.js"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+adsf
 
-### Analyzing the Bundle Size
+#### (3b) Import local JSON file
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+adsf
 
-### Making a Progressive Web App
+#### (3c) Fix the warning, Each child in a list should have a unique key prop
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+asdf
 
-### Advanced Configuration
+#### (4) Move the data to an online JSON file and fetch it from there
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+asdf
 
-### Deployment
+#### (5) Answer: What would we do if we had 100 cars?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+adsf
